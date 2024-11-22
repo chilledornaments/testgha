@@ -1,0 +1,20 @@
+name: Echo FOO Variable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  echo-foo:
+    runs-on: ubuntu-latest
+    environment: test
+    env:
+      FOO: "Hello, GitHub Actions!"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Echo FOO variable
+        run: echo "The value of FOO is: $FOO"
+
