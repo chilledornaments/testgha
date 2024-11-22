@@ -9,12 +9,12 @@ jobs:
   echo-foo:
     runs-on: ubuntu-latest
     environment: test
-    env:
-      FOO: "Hello, GitHub Actions!"
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Echo FOO variable
-        run: echo "The value of FOO is: $FOO"
+        run: |
+            echo "The value of FOO is: $FOO"
+
 
